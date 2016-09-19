@@ -1,6 +1,6 @@
 # MS Graph API plugin for NativeScript
 
-***NOTE:*** **This library is a work in progress at this time and is not finished. You can use the authentication part from this library, but the Microsoft Graph API part is not yet complete. You should consider using the [nativescript-office365](https://www.npmjs.com/package/nativescript-office365) npm package instead as a temporary solution while this library is in the works. The nativescript-office365 package will allow you to manually submit REST queries against the same Graph API.**
+***NOTE:*** **This library is currently being developed and is pre-alpha at this time**
 
 <img src="docs/images/Today-at-Connect-1.png" alt="MS Graph API"/><br/>
 
@@ -29,40 +29,7 @@ From the command prompt go to your app's root folder and execute:
 tns plugin add nativescript-msgraph
 ```
 
-Then open `references.d.ts` in the root of your project and add this line to get autocompletion and type-checking for this plugin:
-
-```
-/// <reference path="./node_modules/nativescript-msgraph/msgraph.d.ts" />
-```
-
 ## Usage
 
-If you want a quickstart, [get the demo app here](https://github.com/alexziskind1/nativescript-msgraph/tree/master/demo).
+coming soon
 
-### Start-up wiring
-We need to do some wiring when your app starts, so open `app.ts` and add this before `application.start();`:
-
-##### TypeScript
-```js
-import * as msGraphModule from 'nativescript-msgraph';
-
-var msGraphInitOptions : msGraphModule.InitOptions = {
-    clientId: '<enter GUID here>', //client id for application (GUID)
-    scopes: ['Files.ReadWrite']
-};
-msGraphModule.init(msGraphInitOptions);
-```
-
-***Note 1:*** *Enter the client id GUID value that was generated for you when you registered your app in the Prerequisites section.*
-
-***Note 2:*** *The scope listed above gives your NativeScript app SharePoint (OneDrive) file read/write permissions. Add/replace with other scope strings to give your app permissions to do other activities. More scopes are listed [here](https://msdn.microsoft.com/en-us/office/office365/howto/application-manifest)*
-
-
-## Future work
-- Add Android support
-- Expose MS Graph Client to consumer
-
-
-## Credits
-The starting point for this plugin was the [NativeScript Plugin Seed](https://github.com/NathanWalker/nativescript-plugin-seed) by [Nathan Walker](https://github.com/NathanWalker).
-The MS Graph Client iOS version wouldn't have worked without the iOS ninja expertise of [Jason Zhekov](https://github.com/jasssonpet)
